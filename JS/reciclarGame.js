@@ -27,5 +27,20 @@ ReciclarGame.prototype.validarCampoNombre = function(){
   }
 }
 ReciclarGame.prototype.elegirDificultad = function(){
-  alert("hola");
+  $( function() {
+    $( "#dificultad" ).dialog({
+      
+      buttons:{
+        "Fácil": function(){
+          that.jugar("facil");
+        },
+        "Normal":function(){
+          that.jugar("normal");
+        },
+        "Difícil":function(){
+          that.jugar("dificil");
+        }
+      }
+    });
+  } );
 }
