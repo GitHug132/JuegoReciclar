@@ -1,6 +1,13 @@
 .ui-dialog-titlebar-close {
     visibility: hidden;
 }
-.container{
-
+*{
+  margin:5px;
+  padding:5px;
+}
+body{
+  font-size:16px;
+}
+#juego{
+  display:none;
 }
