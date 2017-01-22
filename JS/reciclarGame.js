@@ -35,8 +35,10 @@ ReciclarGame.prototype.introducirNombre = function() {
 }
 ReciclarGame.prototype.validarCampoNombre = function() {
     var nombre = $("#campoNombre").val();
+    var exp = /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/
     nombre = nombre.trim();
-    if (nombre == "" || parseInt(nombre) == nombre) {
+    if (nombre == "" || parseInt(nombre) == nombre || exp.test(nombre)==false) {
+        toastr.error("Solo se permiten Letras y Espacios")
         return false;
     } else {
         this.nombre = nombre;
@@ -104,8 +106,13 @@ ReciclarGame.prototype.crearBasuras = function(dificultad, arrayBasuras) {
     var basurasTemp = Array.from(this.arrayBasuras);
     for (var i = 0; i < this.numeroBasuras; i++) {
 
-        var temp = Math.round((Math.random() * this.numeroBasuras))
+        var temp = Math.round((Math.random() * basurasTemp.length-1))
+        //Para solventar el error
+        if(temp<0)temp=0;
         arrayBasuras.push(basurasTemp[temp])
+        if(arrayBasuras[i]==undefined){
+          console.log("posicion: "+i+" temp: "+temp);
+        }
         basurasTemp.splice(temp, 1);
     }
     return arrayBasuras;
@@ -181,18 +188,18 @@ ReciclarGame.prototype.crearEventos = function() {
 }
 
 ReciclarGame.prototype.Drop = function(event, ui) {
+    ui.draggable.remove();
     if (ui.draggable.hasClass(event.target.classList[0])) {
-        ui.draggable.remove();
         this.puntuacion++;
-        toastr.success("Ahora tienes "+this.puntuacion+"!");
+        toastr.success("Ahora tienes "+this.puntuacion+" puntos!");
         if($("#basura").find(".basura").length==0){
           $("#contenedores").find(".contenedor").remove();
           $(function() {
               $("#reiniciar").dialog({
                   title: that.nombre+" tiene "+ that.puntuacion + " puntos",
                   closeOnEscape: false,
-                  width: 400,
-                  height: 200,
+                  width: 700,
+                  height: 300,
                   buttons: {
                       "Reiniciar": function() {
                           $(this).dialog("close");

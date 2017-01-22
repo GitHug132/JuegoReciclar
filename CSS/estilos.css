@@ -1,12 +1,52 @@
-.ui-dialog-titlebar-close {
-    visibility: hidden;
+@media only screen and (min-width: 800px) {
+  #contenedores{
+    position:relative;
+    width:98%;
+    border:dashed 3px red;
+    height:60%;
+    min-width:150px;
+  }
+  #contenedores>img{
+    margin-left:2%;
+  }
+  #basura>img{
+    width:80px;
+    height:80px;
+  }
+  #basura{
+    position:relative;
+    width:85%;
+    min-width:930px;
+    border:dashed 3px green;
+    height:60%;
+    min-width:150px;
+  }
+  #juego{
+    margin:3%;
+    width:90%;
+    height:80%;
+    min-height:400px;
+    min-width:710px;
+
+  }
 }
 *{
   margin:5px;
   padding:5px;
 }
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
 body{
   font-size:16px;
+  background: rgba(252,205,77,1);
+  background: -moz-linear-gradient(left, rgba(252,205,77,1) 0%, rgba(237,214,156,1) 22%, rgba(237,214,156,1) 81%, rgba(248,181,0,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(237,214,156,1)), color-stop(22%, rgba(237,214,156,1)), color-stop(81%, rgba(237,214,156,1)), color-stop(100%, rgba(248,181,0,1)));
+  background: -webkit-linear-gradient(left, rgba(252,205,77,1) 0%, rgba(237,214,156,1) 22%, rgba(237,214,156,1) 81%, rgba(248,181,0,1) 100%);
+  background: -o-linear-gradient(left, rgba(252,205,77,1) 0%, rgba(237,214,156,1) 22%, rgba(237,214,156,1) 81%, rgba(248,181,0,1) 100%);
+  background: -ms-linear-gradient(left, rgba(252,205,77,1) 0%, rgba(237,214,156,1) 22%, rgba(237,214,156,1) 81%, rgba(248,181,0,1) 100%);
+  background: linear-gradient(to right, rgba(252,205,77,1) 0%, rgba(237,214,156,1) 22%, rgba(237,214,156,1) 81%, rgba(248,181,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fccd4d', endColorstr='#f8b500', GradientType=1 );
 }
 h2{
   text-align:center;
@@ -20,6 +60,7 @@ h2{
   height:80%;
   min-height:900px;
   min-width:950px;
+
 }
 #contenedores{
   position:relative;
