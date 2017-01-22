@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <link href="CSS/toastr.min.css" rel="stylesheet"/>
-  <script src="JS/toastr.min.js"></script>
   <script src="JS/jquery-3.1.1.min.js"></script>
+  <script src="JS/toastr.min.js"></script>
   <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
   <link href="jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet"/>
   <link href="CSS/estilos.css" rel="stylesheet" type="text/css"/>
@@ -15,14 +15,16 @@
   <div id="dialog" title="Nombre y apellidos">
       <input type="text" id="campoNombre" maxlength="100"/>
   </div>
-
+  <!-----------Dialog Reiniciar------------->
+  <div id="reiniciar"></div>
   <!-----------Dialog Dificultad------------->
   <div id="dificultad" title="Elige dificultad!"></div>
 
   <!-----------Juego "A Reciclar"------------->
   <div id="juego">
+    <h2>A reciclar!</h2>
     <!--Donde se crearan los contenedores de basura-->
-    <div id="contenedores"><div>
+    <div id="contenedores"></div>
     <!--Donde se crearan las imagenes de la basura-->
     <div id="basura"></div>
   </div>

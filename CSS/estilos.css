@@ -8,6 +8,43 @@
 body{
   font-size:16px;
 }
+h2{
+  text-align:center;
+  font-size:2em;
+}
 #juego{
   display:none;
+  border:dashed 10px blue;
+  margin:3%;
+  width:90%;
+  height:80%;
+  min-height:900px;
+  min-width:950px;
+}
+#contenedores{
+  position:relative;
+  width:98%;
+  border:dashed 3px red;
+  height:30%;
+  min-width:850px;
+}
+
+#contenedores>img{
+  position:relative;
+  margin-left:5%;
+}
+
+#basura{
+  position:relative;
+  width:85%;
+  min-width:930px;
+  border:dashed 3px green;
+  height:60%;
+  min-height:230px;
+}
+
+#basura>img{
+  position:absolute;
+  width:100px;
+  height:100px;
 }
